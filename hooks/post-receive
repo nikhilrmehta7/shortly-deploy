@@ -1,0 +1,2 @@
+#!/bin/sh
+git --work-tree=http://198.199.116.69:4568/ --git-dir=/Users/shortly-deploy/ checkout -f

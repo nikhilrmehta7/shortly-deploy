@@ -20,6 +20,24 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      basic: {
+        src: ['<%= dirs.src %>/main.js'],
+        dest: '<%= dirs.dest %>/basic.js',
+      }
+    },
+
+    gitpush: {
+       task: {
+         options: {
+           remote: 'live3',
+           branch: 'master',
+           cwd: '/Users/student/shortly-deploy'
+         }
+       }
+     },
+   
+
     uglify: {
     },
 
@@ -72,6 +90,8 @@ module.exports = function(grunt) {
   // Main grunt tasks
   ////////////////////////////////////////////////////
 
+
+
   grunt.registerTask('test', [
     'mochaTest'
   ]);
@@ -89,6 +109,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     // add your deploy tasks here
+    'nodemon', 'gitpush', 
   ]);
 
 
